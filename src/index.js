@@ -21,6 +21,6 @@ window.addEventListener('load', () => {
   Handle.hashCheck();
 });
 Style.homePadding();
-Style.projectsParallax();
+// Style.projectsParallax();
 
 BindAllEvents();
