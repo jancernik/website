@@ -112,21 +112,6 @@ export default class Animate {
       });
     }
     if (g.currentSection === 2) {
-      const animationTargets = document.querySelectorAll('.project-item');
-      animationTargets.forEach((el) => {
-        el.style.transform = `translateY(${g.lastSection > 2 ? '-' : ''}40%)`;
-        el.style.opacity = '0';
-      });
-      anime({
-        targets: animationTargets,
-        translateY: 0,
-        opacity: 1,
-        delay: animate ? anime.stagger(200, { start: 500 }) : 0,
-        duration: animate ? 1200 : 0,
-        easing: 'easeOutQuint',
-      });
-    }
-    if (g.currentSection === 3) {
       const target = document.querySelector('form');
       if (!target.classList.contains('animation-ended')) {
         const targetParent = document.querySelector('.contact-container.right');
@@ -220,18 +205,6 @@ export default class Animate {
         pWrapper.classList.remove('animate');
         profile.classList.remove('animate');
         profile.style.opacity = '0';
-      }, c.scrollDur);
-    }
-    if (g.lastSection === 2) {
-      setTimeout(() => {
-        const animationTargets = document.querySelectorAll('.project-item');
-        animationTargets.forEach((el) => {
-          el.style.opacity = '0';
-        });
-        const projectInfos = document.querySelectorAll('.info');
-        projectInfos.forEach((el) => {
-          el.classList.add('hidden');
-        });
       }, c.scrollDur);
     }
   }

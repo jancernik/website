@@ -181,8 +181,7 @@ export default class Handle {
     g.lastSection = g.currentSection;
     if (curHash === '#home') g.currentSection = 0;
     else if (curHash === '#about') g.currentSection = 1;
-    else if (curHash === '#projects') g.currentSection = 2;
-    else if (curHash === '#contact') g.currentSection = 3;
+    else if (curHash === '#contact') g.currentSection = 2;
     else {
       g.currentSection = 0;
       window.history.replaceState(undefined, undefined, '#home');
@@ -197,8 +196,7 @@ export default class Handle {
     g.hashWillChange = true;
     if (g.currentSection === 0) window.location.hash = 'home';
     if (g.currentSection === 1) window.location.hash = 'about';
-    if (g.currentSection === 2) window.location.hash = 'projects';
-    if (g.currentSection === 3) window.location.hash = 'contact';
+    if (g.currentSection === 2) window.location.hash = 'contact';
     setTimeout(() => {
       g.hashWillChange = false;
     }, 400);
