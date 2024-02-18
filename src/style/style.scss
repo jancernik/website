@@ -72,12 +72,12 @@ header {
       color: $primary-accent-color;
     }
   }
-  .cv {
-    font-size: $header-icon-font-size * 0.9;
-    padding-block: ($header-element-height - $header-icon-font-size) * 0.5 +
-      $header-icon-font-size * 0.1;
-    font-family: Kirvy Bold;
-  }
+  // .cv {
+  //   font-size: $header-icon-font-size * 0.9;
+  //   padding-block: ($header-element-height - $header-icon-font-size) * 0.5 +
+  //     $header-icon-font-size * 0.1;
+  //   font-family: Kirvy Bold;
+  // }
   nav {
     margin-left: auto;
     position: relative;
@@ -1146,9 +1146,9 @@ p a {
     nav {
       display: none;
     }
-    .cv {
-      display: none;
-    }
+    // .cv {
+    //   display: none;
+    // }
     a {
       font-size: $header-icon-font-size * 1.2;
     }
