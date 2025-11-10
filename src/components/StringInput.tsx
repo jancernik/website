@@ -3,7 +3,7 @@ interface Props {
   value: string;
   placeholder?: string;
   name: string;
-  type: 'text' | 'email' | 'password';
+  type: "text" | "email" | "password";
   disabled?: boolean;
   required?: boolean;
 }
@@ -26,7 +26,7 @@ function StringInput({
       value={value}
       placeholder={placeholder}
       onChange={(e) => onChange(e.target.value)}
-      className="p-2 border-2 focus-within:outline-1 disabled:opacity-60 leading-none font-size outline-(--foreground)"
+      className="p-2 border-2 focus-within:outline-1 w-full disabled:opacity-60 leading-none font-size outline-(--foreground)"
     />
   );
 }
