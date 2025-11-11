@@ -3,7 +3,7 @@ export const buttonBaseClasses =
 
 export const buttonVariantClasses = {
   primary:
-    "bg-(--primary) hover:bg-(--primary-hover) active:bg-(--primary-active)",
+    "text-(--primary-foreground) border-(--foreground) bg-(--primary) hover:bg-(--primary-hover) active:bg-(--primary-active)",
   secondary:
     "bg-(--secondary) hover:bg-(--secondary-hover) active:bg-(--secondary-active)",
 } as const;
