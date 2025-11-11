@@ -1,5 +1,6 @@
-@import 'tailwindcss';
-@import './typography.css';
+@import "tailwindcss";
+@import "./colors.css";
+@import "./typography.css";
 
 html,
 body {
