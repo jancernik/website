@@ -1,9 +1,10 @@
 import { getButtonClasses, type ButtonVariant } from "./buttonStyles";
+import type { ReactNode } from "react";
 
 interface Props {
   onClick?: () => void;
   variant?: ButtonVariant;
-  children: string;
+  children: ReactNode;
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
   className?: string;

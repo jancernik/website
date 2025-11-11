@@ -7,7 +7,7 @@ import NotFound from "./views/NotFound.tsx";
 import App from "./App.tsx";
 
 import Home from "./views/Home";
-import Contact from "./views/Contact";
+// import Contact from "./views/Contact";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     ErrorBoundary: NotFound,
     children: [
       { index: true, Component: Home },
-      { path: "contact", Component: Contact },
+      // { path: "contact", Component: Contact },
     ],
   },
 ]);
