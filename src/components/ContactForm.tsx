@@ -1,8 +1,9 @@
-import { useState, type FormEvent } from "react"
-import StringInput from "./StringInput"
-import TextArea from "./TextArea"
+import { type FormEvent, useState } from "react"
+
 import Button from "./Button/Button"
 import ContactFormStatus, { type FormStatus } from "./ContactFormStatus"
+import StringInput from "./StringInput"
+import TextArea from "./TextArea"
 
 function ContactForm() {
   const [name, setName] = useState("")
@@ -12,18 +13,18 @@ function ContactForm() {
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault()
-    const payload = { name, email, message }
+    const payload = { email, message, name }
     if (document.activeElement instanceof HTMLElement) document.activeElement.blur()
 
     try {
       setFormStatus("loading")
       const response = await fetch("https://submit-form.com/4U2FgJSU", {
-        method: "POST",
+        body: JSON.stringify(payload),
         headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json"
+          Accept: "application/json",
+          "Content-Type": "application/json"
         },
-        body: JSON.stringify(payload)
+        method: "POST"
       })
       setFormStatus(response.ok ? "success" : "error")
     } catch {
@@ -39,7 +40,7 @@ function ContactForm() {
 
   return (
     <form
-      className="contact-form flex flex-col max-w-md gap-6 items-center"
+      className="contact-form flex max-w-md flex-col items-center gap-6"
       onSubmit={handleSubmit}
     >
       {showFields && (
@@ -47,33 +48,33 @@ function ContactForm() {
           <h4>Message me!</h4>
 
           <StringInput
-            type="text"
-            placeholder="Name"
-            name="name"
-            required
-            value={name}
-            onChange={setName}
             disabled={formStatus === "loading"}
+            name="name"
+            onChange={setName}
+            placeholder="Name"
+            required
+            type="text"
+            value={name}
           />
           <StringInput
-            type="email"
-            placeholder="Email"
-            name="email"
-            required
-            value={email}
-            onChange={setEmail}
             disabled={formStatus === "loading"}
+            name="email"
+            onChange={setEmail}
+            placeholder="Email"
+            required
+            type="email"
+            value={email}
           />
           <TextArea
-            placeholder="Message"
+            disabled={formStatus === "loading"}
             name="message"
+            onChange={setMessage}
+            placeholder="Message"
             required
             rows={5}
             value={message}
-            onChange={setMessage}
-            disabled={formStatus === "loading"}
           />
-          <Button type="submit" disabled={formStatus === "loading"}>
+          <Button disabled={formStatus === "loading"} type="submit">
             {formStatus === "loading" ? "Sending…" : "Send"}
           </Button>
         </>

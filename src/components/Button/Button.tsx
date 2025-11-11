@@ -1,29 +1,30 @@
-import { getButtonClasses, type ButtonVariant } from "./buttonStyles"
 import type { ReactNode } from "react"
 
+import { type ButtonVariant, getButtonClasses } from "./buttonStyles"
+
 interface Props {
-  onClick?: () => void
-  variant?: ButtonVariant
   children: ReactNode
-  type?: "button" | "submit" | "reset"
-  disabled?: boolean
   className?: string
+  disabled?: boolean
+  onClick?: () => void
+  type?: "button" | "reset" | "submit"
+  variant?: ButtonVariant
 }
 
 export function Button({
+  children,
+  className = "",
+  disabled,
   onClick,
   type,
-  disabled,
-  variant = "secondary",
-  className = "",
-  children
+  variant = "secondary"
 }: Props) {
   return (
     <button
+      className={getButtonClasses(variant, className)}
+      disabled={disabled}
       onClick={onClick}
       type={type}
-      disabled={disabled}
-      className={getButtonClasses(variant, className)}
     >
       {children}
     </button>

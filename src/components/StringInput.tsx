@@ -1,24 +1,24 @@
 interface Props {
-  onChange: (value: string) => void
-  value: string
-  placeholder?: string
-  name: string
-  type: "text" | "email" | "password"
   disabled?: boolean
+  name: string
+  onChange: (value: string) => void
+  placeholder?: string
   required?: boolean
+  type: "email" | "password" | "text"
+  value: string
 }
 
-function StringInput({ onChange, placeholder, name, disabled, required, type, value }: Props) {
+function StringInput({ disabled, name, onChange, placeholder, required, type, value }: Props) {
   return (
     <input
-      type={type}
-      name={name}
+      className="font-size w-full border-2 p-2 leading-none outline-(--foreground) focus-within:outline-1 disabled:opacity-60"
       disabled={disabled}
-      required={required}
-      value={value}
-      placeholder={placeholder}
+      name={name}
       onChange={(e) => onChange(e.target.value)}
-      className="p-2 border-2 focus-within:outline-1 w-full disabled:opacity-60 leading-none font-size outline-(--foreground)"
+      placeholder={placeholder}
+      required={required}
+      type={type}
+      value={value}
     />
   )
 }

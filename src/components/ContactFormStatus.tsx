@@ -1,4 +1,4 @@
-export type FormStatus = "idle" | "loading" | "success" | "error"
+export type FormStatus = "error" | "idle" | "loading" | "success"
 
 type Props = { status: FormStatus }
 
@@ -12,7 +12,7 @@ export default function ContactFormStatus({ status }: Props) {
       return (
         <>
           <p className="text-center">Message sent!</p>
-          <p className="text-center">I'll get back to you as soon as possible</p>
+          <p className="text-center">I will get back to you as soon as possible</p>
         </>
       )
     case "error":

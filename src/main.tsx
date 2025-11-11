@@ -3,20 +3,20 @@ import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
 import { createBrowserRouter } from "react-router"
 import { RouterProvider } from "react-router/dom"
-import NotFound from "./views/NotFound.tsx"
-import App from "./App.tsx"
 
+import App from "./App.tsx"
 import Home from "./views/Home"
+import NotFound from "./views/NotFound.tsx"
 // import Contact from "./views/Contact";
 
 const router = createBrowserRouter([
   {
-    Component: App,
-    ErrorBoundary: NotFound,
     children: [
-      { index: true, Component: Home }
+      { Component: Home, index: true }
       // { path: "contact", Component: Contact },
-    ]
+    ],
+    Component: App,
+    ErrorBoundary: NotFound
   }
 ])
 
