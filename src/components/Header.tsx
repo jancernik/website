@@ -1,9 +1,9 @@
-import { ButtonLink } from "./Button";
-import { Link } from "react-router";
+import { ButtonLink } from "./Button"
+import { Link } from "react-router"
 
-const linkedinUrl = "https://www.linkedin.com/in/jan-cernik";
-const githubUrl = "https://github.com/jancernik";
-const cvUrl = "https://cv.jancernik.com";
+const linkedinUrl = "https://www.linkedin.com/in/jan-cernik"
+const githubUrl = "https://github.com/jancernik"
+const cvUrl = "https://cv.jancernik.com"
 
 function Header() {
   return (
@@ -19,7 +19,7 @@ function Header() {
         </ButtonLink>
       </div>
     </header>
-  );
+  )
 }
 
-export default Header;
+export default Header

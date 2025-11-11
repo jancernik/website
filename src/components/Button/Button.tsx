@@ -1,13 +1,13 @@
-import { getButtonClasses, type ButtonVariant } from "./buttonStyles";
-import type { ReactNode } from "react";
+import { getButtonClasses, type ButtonVariant } from "./buttonStyles"
+import type { ReactNode } from "react"
 
 interface Props {
-  onClick?: () => void;
-  variant?: ButtonVariant;
-  children: ReactNode;
-  type?: "button" | "submit" | "reset";
-  disabled?: boolean;
-  className?: string;
+  onClick?: () => void
+  variant?: ButtonVariant
+  children: ReactNode
+  type?: "button" | "submit" | "reset"
+  disabled?: boolean
+  className?: string
 }
 
 export function Button({
@@ -16,7 +16,7 @@ export function Button({
   disabled,
   variant = "secondary",
   className = "",
-  children,
+  children
 }: Props) {
   return (
     <button
@@ -27,7 +27,7 @@ export function Button({
     >
       {children}
     </button>
-  );
+  )
 }
 
-export default Button;
+export default Button

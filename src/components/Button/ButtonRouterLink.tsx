@@ -1,8 +1,8 @@
-import { Link, type LinkProps } from "react-router";
-import { getButtonClasses, type ButtonVariant } from "./buttonStyles";
+import { Link, type LinkProps } from "react-router"
+import { getButtonClasses, type ButtonVariant } from "./buttonStyles"
 
 interface ButtonRouterLinkProps extends LinkProps {
-  variant?: ButtonVariant;
+  variant?: ButtonVariant
 }
 
 function ButtonRouterLink({
@@ -10,7 +10,7 @@ function ButtonRouterLink({
   variant = "secondary",
   ...props
 }: ButtonRouterLinkProps) {
-  return <Link className={getButtonClasses(variant, className)} {...props} />;
+  return <Link className={getButtonClasses(variant, className)} {...props} />
 }
 
-export default ButtonRouterLink;
+export default ButtonRouterLink

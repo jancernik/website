@@ -1,42 +1,41 @@
-import { useState, type FormEvent } from "react";
-import StringInput from "./StringInput";
-import TextArea from "./TextArea";
-import Button from "./Button/Button";
-import ContactFormStatus, { type FormStatus } from "./ContactFormStatus";
+import { useState, type FormEvent } from "react"
+import StringInput from "./StringInput"
+import TextArea from "./TextArea"
+import Button from "./Button/Button"
+import ContactFormStatus, { type FormStatus } from "./ContactFormStatus"
 
 function ContactForm() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [formStatus, setFormStatus] = useState<FormStatus>("idle");
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [message, setMessage] = useState("")
+  const [formStatus, setFormStatus] = useState<FormStatus>("idle")
 
   const handleSubmit = async (event: FormEvent) => {
-    event.preventDefault();
-    const payload = { name, email, message };
-    if (document.activeElement instanceof HTMLElement)
-      document.activeElement.blur();
+    event.preventDefault()
+    const payload = { name, email, message }
+    if (document.activeElement instanceof HTMLElement) document.activeElement.blur()
 
     try {
-      setFormStatus("loading");
+      setFormStatus("loading")
       const response = await fetch("https://submit-form.com/4U2FgJSU", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json",
+          Accept: "application/json"
         },
-        body: JSON.stringify(payload),
-      });
-      setFormStatus(response.ok ? "success" : "error");
+        body: JSON.stringify(payload)
+      })
+      setFormStatus(response.ok ? "success" : "error")
     } catch {
-      setFormStatus("error");
+      setFormStatus("error")
     } finally {
-      setName("");
-      setEmail("");
-      setMessage("");
+      setName("")
+      setEmail("")
+      setMessage("")
     }
-  };
+  }
 
-  const showFields = formStatus === "idle" || formStatus === "loading";
+  const showFields = formStatus === "idle" || formStatus === "loading"
 
   return (
     <form
@@ -82,7 +81,7 @@ function ContactForm() {
 
       <ContactFormStatus status={formStatus} />
     </form>
-  );
+  )
 }
 
-export default ContactForm;
+export default ContactForm

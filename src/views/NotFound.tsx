@@ -1,4 +1,4 @@
-import { ButtonRouterLink } from "../components/Button";
+import { ButtonRouterLink } from "../components/Button"
 
 function NotFound() {
   return (
@@ -9,7 +9,7 @@ function NotFound() {
         Go Home
       </ButtonRouterLink>
     </div>
-  );
+  )
 }
 
-export default NotFound;
+export default NotFound

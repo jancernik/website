@@ -1,20 +1,17 @@
 export const buttonBaseClasses =
-  "uppercase px-4.5 py-2 border-2 font-medium text-sm inline-block cursor-pointer disabled:opacity-60 disabled:cursor-progress";
+  "uppercase px-4.5 py-2 border-2 font-medium text-sm inline-block cursor-pointer disabled:opacity-60 disabled:cursor-progress"
 
 export const buttonVariantClasses = {
   primary:
     "text-(--primary-foreground) border-(--foreground) bg-(--primary) hover:bg-(--primary-hover) active:bg-(--primary-active)",
-  secondary:
-    "bg-(--secondary) hover:bg-(--secondary-hover) active:bg-(--secondary-active)",
-} as const;
+  secondary: "bg-(--secondary) hover:bg-(--secondary-hover) active:bg-(--secondary-active)"
+} as const
 
-export type ButtonVariant = keyof typeof buttonVariantClasses;
+export type ButtonVariant = keyof typeof buttonVariantClasses
 
 export function getButtonClasses(
   variant: ButtonVariant = "secondary",
   className: string = ""
 ): string {
-  return `${buttonBaseClasses} ${buttonVariantClasses[variant]}${
-    className ? " " + className : ""
-  }`;
+  return `${buttonBaseClasses} ${buttonVariantClasses[variant]}${className ? " " + className : ""}`
 }

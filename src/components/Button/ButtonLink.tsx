@@ -1,8 +1,8 @@
-import { type AnchorHTMLAttributes } from "react";
-import { getButtonClasses, type ButtonVariant } from "./buttonStyles";
+import { type AnchorHTMLAttributes } from "react"
+import { getButtonClasses, type ButtonVariant } from "./buttonStyles"
 
 interface ButtonLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
-  variant?: ButtonVariant;
+  variant?: ButtonVariant
 }
 
 function ButtonLink({
@@ -15,7 +15,7 @@ function ButtonLink({
     <a className={getButtonClasses(variant, className)} {...props}>
       {children}
     </a>
-  );
+  )
 }
 
-export default ButtonLink;
+export default ButtonLink
