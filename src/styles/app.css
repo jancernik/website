@@ -19,3 +19,69 @@ body {
 *::after {
   -webkit-tap-highlight-color: transparent;
 }
+
+.sketch {
+  --sketch-size: 45px;
+  --sketch-color: var(--foreground);
+  --sketch-opacity: 0.6;
+  --sketch-fade: 20%;
+  position: relative;
+}
+
+.sketch::before,
+.sketch::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  opacity: var(--sketch-opacity);
+}
+
+.sketch::before {
+  width: calc(100% + var(--sketch-size));
+  height: calc(100% + 3px);
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -1.5px);
+  border-top: 1px dashed var(--sketch-color);
+  border-bottom: 1px dashed var(--sketch-color);
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 var(--sketch-fade),
+    #000 calc(100% - var(--sketch-fade)),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 var(--sketch-fade),
+    #000 calc(100% - var(--sketch-fade)),
+    transparent 100%
+  );
+}
+
+.sketch::after {
+  width: calc(100% + 3px);
+  height: calc(100% + var(--sketch-size));
+  left: 0;
+  top: 50%;
+  transform: translate(-1.5px, -50%);
+  border-left: 1px dashed var(--sketch-color);
+  border-right: 1px dashed var(--sketch-color);
+
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    #000 var(--sketch-fade),
+    #000 calc(100% - var(--sketch-fade)),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    #000 var(--sketch-fade),
+    #000 calc(100% - var(--sketch-fade)),
+    transparent 100%
+  );
+}
