@@ -1,4 +1,4 @@
-import type { ReactNode } from "react"
+import { forwardRef, type ReactNode } from "react"
 
 import { type ButtonVariant, getButtonClasses } from "./buttonStyles"
 
@@ -11,24 +11,21 @@ interface Props {
   variant?: ButtonVariant
 }
 
-export function Button({
-  children,
-  className = "",
-  disabled,
-  onClick,
-  type,
-  variant = "secondary"
-}: Props) {
+export const Button = forwardRef<HTMLButtonElement, Props>(function Button(
+  { children, className = "", disabled, onClick, type, variant = "secondary" },
+  ref
+) {
   return (
     <button
       className={getButtonClasses(variant, className)}
       disabled={disabled}
       onClick={onClick}
+      ref={ref}
       type={type}
     >
       {children}
     </button>
   )
-}
+})
 
 export default Button

@@ -4,7 +4,8 @@ export const buttonBaseClasses =
 export const buttonVariantClasses = {
   primary:
     "text-(--primary-foreground) border-(--foreground) bg-(--primary) hover:bg-(--primary-hover) active:bg-(--primary-active)",
-  secondary: "bg-(--secondary) hover:bg-(--secondary-hover) active:bg-(--secondary-active)"
+  secondary:
+    "text-(--foreground) border-(--foreground) bg-(--secondary) hover:bg-(--secondary-hover) active:bg-(--secondary-active)"
 } as const
 
 export type ButtonVariant = keyof typeof buttonVariantClasses
