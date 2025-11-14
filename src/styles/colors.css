@@ -151,8 +151,8 @@
   --background: hsl(207, 88%, 95%);
   --foreground: hsl(226, 87%, 35%);
   --primary: hsl(200, 100%, 41%);
-  --primary-hover: hsl(100, 100%, 45%);
-  --primary-active: hsl(100, 100%, 49%);
+  --primary-hover: hsl(200, 100%, 45%);
+  --primary-active: hsl(200, 100%, 49%);
   --primary-foreground: var(--background);
   --secondary: hsl(207, 88%, 92%);
   --secondary-hover: hsl(207, 88%, 88%);
