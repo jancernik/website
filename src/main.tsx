@@ -7,16 +7,14 @@ import { RouterProvider } from "react-router/dom"
 import App from "./App.tsx"
 import Home from "./views/Home"
 import NotFound from "./views/NotFound.tsx"
-// import Contact from "./views/Contact";
 
 const router = createBrowserRouter([
   {
     children: [
-      { Component: Home, index: true }
-      // { path: "contact", Component: Contact },
+      { Component: Home, index: true },
+      { Component: NotFound, path: "*" }
     ],
-    Component: App,
-    ErrorBoundary: NotFound
+    Component: App
   }
 ])
 
