@@ -11,7 +11,7 @@ interface Props {
 function StringInput({ disabled, name, onChange, placeholder, required, type, value }: Props) {
   return (
     <input
-      className="font-size w-full border-2 p-2 leading-none outline-(--foreground) focus-within:outline-1 disabled:opacity-60"
+      className="w-full border-2 border-(--foreground) bg-(--background) px-3 py-2 text-base focus:border-(--primary) disabled:opacity-60"
       disabled={disabled}
       name={name}
       onChange={(e) => onChange(e.target.value)}
