@@ -25,6 +25,21 @@
   --secondary-active: hsl(0, 0%, 88%);
 }
 
+/* Dark Themes */
+
+[data-theme="kiwi"] {
+  color-scheme: dark;
+  --background: hsl(69, 10%, 14%);
+  --foreground: hsl(60, 30%, 96%);
+  --primary: hsl(75, 76%, 55%);
+  --primary-hover: hsl(75, 76%, 51%);
+  --primary-active: hsl(75, 76%, 47%);
+  --primary-foreground: var(--background);
+  --secondary: hsl(60, 8%, 17%);
+  --secondary-hover: hsl(60, 8%, 24%);
+  --secondary-active: hsl(60, 8%, 28%);
+}
+
 [data-theme="classic"] {
   color-scheme: dark;
   --background: hsl(210, 23%, 11%);
@@ -36,19 +51,6 @@
   --secondary: hsl(210, 23%, 16%);
   --secondary-hover: hsl(210, 23%, 20%);
   --secondary-active: hsl(210, 23%, 24%);
-}
-
-[data-theme="night"] {
-  color-scheme: dark;
-  --background: hsl(240, 30%, 19%);
-  --foreground: hsl(0, 0%, 98%);
-  --primary: hsl(46, 88%, 49%);
-  --primary-hover: hsl(46, 88%, 45%);
-  --primary-active: hsl(46, 88%, 41%);
-  --primary-foreground: var(--background);
-  --secondary: hsl(240, 30%, 30%);
-  --secondary-hover: hsl(240, 30%, 35%);
-  --secondary-active: hsl(240, 30%, 40%);
 }
 
 [data-theme="ocean"] {
@@ -64,160 +66,43 @@
   --secondary-active: hsl(230, 38%, 28%);
 }
 
-[data-theme="forest"] {
-  color-scheme: dark;
-  --background: hsl(155, 28%, 15%);
-  --foreground: hsl(136, 44%, 95%);
-  --primary: hsl(122, 39%, 49%);
-  --primary-hover: hsl(122, 39%, 45%);
-  --primary-active: hsl(122, 39%, 41%);
-  --primary-foreground: var(--background);
-  --secondary: hsl(155, 28%, 20%);
-  --secondary-hover: hsl(155, 28%, 24%);
-  --secondary-active: hsl(155, 28%, 28%);
-}
-
-[data-theme="dracula"] {
+[data-theme="candy"] {
   color-scheme: dark;
   --background: hsl(232, 15%, 19%);
   --foreground: hsl(60, 30%, 96%);
-  --primary: hsl(326, 100%, 73%);
-  --primary-hover: hsl(326, 100%, 69%);
-  --primary-active: hsl(326, 100%, 65%);
+  --primary: hsl(289, 100%, 73%);
+  --primary-hover: hsl(289, 100%, 69%);
+  --primary-active: hsl(289, 100%, 65%);
   --primary-foreground: var(--background);
   --secondary: hsl(232, 15%, 24%);
   --secondary-hover: hsl(232, 15%, 28%);
   --secondary-active: hsl(232, 15%, 32%);
 }
 
-[data-theme="monokai"] {
+[data-theme="forest"] {
   color-scheme: dark;
-  --background: hsl(60, 6%, 15%);
-  --foreground: hsl(60, 30%, 96%);
-  --primary: hsl(75, 76%, 55%);
-  --primary-hover: hsl(75, 76%, 51%);
-  --primary-active: hsl(75, 76%, 47%);
+  --background: hsl(130, 18%, 12%);
+  --foreground: hsl(120, 20%, 94%);
+  --primary: hsl(140, 40%, 48%);
+  --primary-hover: hsl(140, 40%, 44%);
+  --primary-active: hsl(140, 40%, 40%);
   --primary-foreground: var(--background);
-  --secondary: hsl(60, 6%, 20%);
-  --secondary-hover: hsl(60, 6%, 24%);
-  --secondary-active: hsl(60, 6%, 28%);
+  --secondary: hsl(130, 18%, 16%);
+  --secondary-hover: hsl(130, 18%, 20%);
+  --secondary-active: hsl(130, 18%, 24%);
 }
 
-[data-theme="sunset"] {
+[data-theme="night"] {
   color-scheme: dark;
-  --background: hsl(307, 25%, 15%);
-  --foreground: hsl(32, 64%, 89%);
-  --primary: hsl(0, 100%, 71%);
-  --primary-hover: hsl(0, 100%, 67%);
-  --primary-active: hsl(0, 100%, 63%);
+  --background: hsl(240, 30%, 19%);
+  --foreground: hsl(0, 0%, 98%);
+  --primary: hsl(43, 90%, 47%);
+  --primary-hover: hsl(43, 90%, 45%);
+  --primary-active: hsl(43, 90%, 41%);
   --primary-foreground: var(--background);
-  --secondary: hsl(307, 25%, 20%);
-  --secondary-hover: hsl(307, 25%, 24%);
-  --secondary-active: hsl(307, 25%, 28%);
-}
-
-[data-theme="arctic"] {
-  color-scheme: light;
-  --background: hsl(207, 88%, 95%);
-  --foreground: hsl(226, 87%, 35%);
-  --primary: hsl(187, 100%, 41%);
-  --primary-hover: hsl(187, 100%, 45%);
-  --primary-active: hsl(187, 100%, 49%);
-  --primary-foreground: var(--background);
-  --secondary: hsl(207, 88%, 92%);
-  --secondary-hover: hsl(207, 88%, 88%);
-  --secondary-active: hsl(207, 88%, 84%);
-}
-
-[data-theme="sand"] {
-  color-scheme: light;
-  --background: hsl(45, 60%, 96%);
-  --foreground: hsl(210, 15%, 15%);
-  --primary: hsl(12, 70%, 42%);
-  --primary-hover: hsl(12, 70%, 46%);
-  --primary-active: hsl(12, 70%, 50%);
-  --primary-foreground: var(--background);
-  --secondary: hsl(45, 60%, 92%);
-  --secondary-hover: hsl(45, 60%, 88%);
-  --secondary-active: hsl(45, 60%, 84%);
-}
-
-[data-theme="orchid"] {
-  color-scheme: dark;
-  --background: hsl(270, 20%, 14%);
-  --foreground: hsl(300, 20%, 95%);
-  --primary: hsl(285, 70%, 62%);
-  --primary-hover: hsl(285, 70%, 58%);
-  --primary-active: hsl(285, 70%, 54%);
-  --primary-foreground: var(--background);
-  --secondary: hsl(270, 20%, 18%);
-  --secondary-hover: hsl(270, 20%, 22%);
-  --secondary-active: hsl(270, 20%, 26%);
-}
-
-[data-theme="mint"] {
-  color-scheme: light;
-  --background: hsl(150, 40%, 96%);
-  --foreground: hsl(170, 25%, 18%);
-  --primary: hsl(176, 60%, 30%);
-  --primary-hover: hsl(176, 60%, 34%);
-  --primary-active: hsl(176, 60%, 38%);
-  --primary-foreground: var(--background);
-  --secondary: hsl(150, 40%, 92%);
-  --secondary-hover: hsl(150, 40%, 88%);
-  --secondary-active: hsl(150, 40%, 84%);
-}
-
-[data-theme="sepia"] {
-  color-scheme: light;
-  --background: hsl(35, 40%, 95%);
-  --foreground: hsl(24, 32%, 22%);
-  --primary: hsl(20, 60%, 34%);
-  --primary-hover: hsl(20, 60%, 38%);
-  --primary-active: hsl(20, 60%, 42%);
-  --primary-foreground: var(--background);
-  --secondary: hsl(35, 40%, 91%);
-  --secondary-hover: hsl(35, 40%, 87%);
-  --secondary-active: hsl(35, 40%, 83%);
-}
-
-[data-theme="cobalt"] {
-  color-scheme: dark;
-  --background: hsl(226, 40%, 14%);
-  --foreground: hsl(220, 20%, 96%);
-  --primary: hsl(223, 86%, 60%);
-  --primary-hover: hsl(223, 86%, 56%);
-  --primary-active: hsl(223, 86%, 52%);
-  --primary-foreground: var(--background);
-  --secondary: hsl(226, 40%, 18%);
-  --secondary-hover: hsl(226, 40%, 22%);
-  --secondary-active: hsl(226, 40%, 26%);
-}
-
-[data-theme="midnight"] {
-  color-scheme: dark;
-  --background: hsl(220, 28%, 10%);
-  --foreground: hsl(210, 20%, 96%);
-  --primary: hsl(200, 90%, 56%);
-  --primary-hover: hsl(200, 90%, 52%);
-  --primary-active: hsl(200, 90%, 48%);
-  --primary-foreground: var(--background);
-  --secondary: hsl(220, 28%, 14%);
-  --secondary-hover: hsl(220, 28%, 18%);
-  --secondary-active: hsl(220, 28%, 22%);
-}
-
-[data-theme="peach"] {
-  color-scheme: light;
-  --background: hsl(20, 80%, 96%);
-  --foreground: hsl(10, 20%, 20%);
-  --primary: hsl(14, 90%, 55%);
-  --primary-hover: hsl(14, 90%, 59%);
-  --primary-active: hsl(14, 90%, 63%);
-  --primary-foreground: var(--background);
-  --secondary: hsl(20, 80%, 92%);
-  --secondary-hover: hsl(20, 80%, 88%);
-  --secondary-active: hsl(20, 80%, 84%);
+  --secondary: hsl(240, 30%, 30%);
+  --secondary-hover: hsl(240, 30%, 35%);
+  --secondary-active: hsl(240, 30%, 40%);
 }
 
 [data-theme="slate"] {
@@ -233,20 +118,74 @@
   --secondary-active: hsl(220, 15%, 24%);
 }
 
-[data-theme="charcoal"] {
+[data-theme="copper"] {
   color-scheme: dark;
-  --background: hsl(210, 10%, 10%);
-  --foreground: hsl(0, 0%, 96%);
-  --primary: hsl(25, 85%, 55%);
-  --primary-hover: hsl(25, 85%, 51%);
-  --primary-active: hsl(25, 85%, 47%);
+  --background: hsl(18, 22%, 12%);
+  --foreground: hsl(24, 30%, 96%);
+  --primary: hsl(20, 80%, 52%);
+  --primary-hover: hsl(20, 80%, 48%);
+  --primary-active: hsl(20, 80%, 44%);
   --primary-foreground: var(--background);
-  --secondary: hsl(210, 10%, 14%);
-  --secondary-hover: hsl(210, 10%, 18%);
-  --secondary-active: hsl(210, 10%, 22%);
+  --secondary: hsl(18, 22%, 16%);
+  --secondary-hover: hsl(18, 22%, 20%);
+  --secondary-active: hsl(18, 22%, 24%);
 }
 
-[data-theme="blossom"] {
+/* Light Themes */
+
+[data-theme="lime"] {
+  color-scheme: light;
+  --background: hsl(97, 40%, 96%);
+  --foreground: hsl(103, 15%, 19%);
+  --primary: hsl(75, 54%, 45%);
+  --primary-hover: hsl(75, 54%, 48%);
+  --primary-active: hsl(75, 54%, 51%);
+  --primary-foreground: var(--background);
+  --secondary: hsl(88, 100%, 97%);
+  --secondary-hover: hsl(88, 100%, 94%);
+  --secondary-active: hsl(88, 100%, 91%);
+}
+
+[data-theme="arctic"] {
+  color-scheme: light;
+  --background: hsl(207, 88%, 95%);
+  --foreground: hsl(226, 87%, 35%);
+  --primary: hsl(200, 100%, 41%);
+  --primary-hover: hsl(100, 100%, 45%);
+  --primary-active: hsl(100, 100%, 49%);
+  --primary-foreground: var(--background);
+  --secondary: hsl(207, 88%, 92%);
+  --secondary-hover: hsl(207, 88%, 88%);
+  --secondary-active: hsl(207, 88%, 84%);
+}
+
+[data-theme="sepia"] {
+  color-scheme: light;
+  --background: hsl(35, 40%, 95%);
+  --foreground: hsl(24, 32%, 22%);
+  --primary: hsl(20, 60%, 34%);
+  --primary-hover: hsl(20, 60%, 38%);
+  --primary-active: hsl(20, 60%, 42%);
+  --primary-foreground: var(--background);
+  --secondary: hsl(35, 40%, 91%);
+  --secondary-hover: hsl(35, 40%, 87%);
+  --secondary-active: hsl(35, 40%, 83%);
+}
+
+[data-theme="mint"] {
+  color-scheme: light;
+  --background: hsl(150, 40%, 96%);
+  --foreground: hsl(170, 25%, 18%);
+  --primary: hsl(176, 60%, 30%);
+  --primary-hover: hsl(176, 60%, 34%);
+  --primary-active: hsl(176, 60%, 38%);
+  --primary-foreground: var(--background);
+  --secondary: hsl(150, 40%, 92%);
+  --secondary-hover: hsl(150, 40%, 88%);
+  --secondary-active: hsl(150, 40%, 84%);
+}
+
+[data-theme="sakura"] {
   color-scheme: light;
   --background: hsl(340, 60%, 97%);
   --foreground: hsl(330, 20%, 20%);
@@ -257,6 +196,19 @@
   --secondary: hsl(340, 60%, 93%);
   --secondary-hover: hsl(340, 60%, 89%);
   --secondary-active: hsl(340, 60%, 85%);
+}
+
+[data-theme="sunset"] {
+  color-scheme: light;
+  --background: hsl(20, 80%, 96%);
+  --foreground: hsl(10, 20%, 20%);
+  --primary: hsl(14, 90%, 55%);
+  --primary-hover: hsl(14, 90%, 59%);
+  --primary-active: hsl(14, 90%, 63%);
+  --primary-foreground: var(--background);
+  --secondary: hsl(20, 80%, 92%);
+  --secondary-hover: hsl(20, 80%, 88%);
+  --secondary-active: hsl(20, 80%, 84%);
 }
 
 [data-theme="dawn"] {
@@ -272,45 +224,6 @@
   --secondary-active: hsl(35, 70%, 85%);
 }
 
-[data-theme="ember"] {
-  color-scheme: dark;
-  --background: hsl(15, 30%, 12%);
-  --foreground: hsl(20, 30%, 96%);
-  --primary: hsl(12, 90%, 58%);
-  --primary-hover: hsl(12, 90%, 54%);
-  --primary-active: hsl(12, 90%, 50%);
-  --primary-foreground: var(--background);
-  --secondary: hsl(15, 30%, 16%);
-  --secondary-hover: hsl(15, 30%, 20%);
-  --secondary-active: hsl(15, 30%, 24%);
-}
-
-[data-theme="pearl"] {
-  color-scheme: light;
-  --background: hsl(210, 40%, 98%);
-  --foreground: hsl(220, 20%, 20%);
-  --primary: hsl(260, 70%, 46%);
-  --primary-hover: hsl(260, 70%, 50%);
-  --primary-active: hsl(260, 70%, 54%);
-  --primary-foreground: var(--background);
-  --secondary: hsl(210, 40%, 94%);
-  --secondary-hover: hsl(210, 40%, 90%);
-  --secondary-active: hsl(210, 40%, 86%);
-}
-
-[data-theme="taupe"] {
-  color-scheme: light;
-  --background: hsl(30, 20%, 96%);
-  --foreground: hsl(30, 20%, 18%);
-  --primary: hsl(15, 40%, 38%);
-  --primary-hover: hsl(15, 40%, 42%);
-  --primary-active: hsl(15, 40%, 46%);
-  --primary-foreground: var(--background);
-  --secondary: hsl(30, 20%, 92%);
-  --secondary-hover: hsl(30, 20%, 88%);
-  --secondary-active: hsl(30, 20%, 84%);
-}
-
 [data-theme="lavender"] {
   color-scheme: light;
   --background: hsl(260, 40%, 97%);
@@ -322,30 +235,4 @@
   --secondary: hsl(260, 40%, 93%);
   --secondary-hover: hsl(260, 40%, 89%);
   --secondary-active: hsl(260, 40%, 85%);
-}
-
-[data-theme="moss"] {
-  color-scheme: dark;
-  --background: hsl(130, 18%, 12%);
-  --foreground: hsl(120, 20%, 94%);
-  --primary: hsl(140, 40%, 48%);
-  --primary-hover: hsl(140, 40%, 44%);
-  --primary-active: hsl(140, 40%, 40%);
-  --primary-foreground: var(--background);
-  --secondary: hsl(130, 18%, 16%);
-  --secondary-hover: hsl(130, 18%, 20%);
-  --secondary-active: hsl(130, 18%, 24%);
-}
-
-[data-theme="copper"] {
-  color-scheme: dark;
-  --background: hsl(18, 22%, 12%);
-  --foreground: hsl(24, 30%, 96%);
-  --primary: hsl(20, 80%, 52%);
-  --primary-hover: hsl(20, 80%, 48%);
-  --primary-active: hsl(20, 80%, 44%);
-  --primary-foreground: var(--background);
-  --secondary: hsl(18, 22%, 16%);
-  --secondary-hover: hsl(18, 22%, 20%);
-  --secondary-active: hsl(18, 22%, 24%);
 }
