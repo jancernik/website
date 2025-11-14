@@ -1,23 +1,43 @@
 import { Link } from "react-router"
 
-import { ButtonLink } from "./Button"
-
-const linkedinUrl = "https://www.linkedin.com/in/jan-cernik"
-const githubUrl = "https://github.com/jancernik"
-const cvUrl = "https://cv.jancernik.com"
+const SHOW_RESUME = true
+const SHOW_LINKEDIN = true
 
 function Header() {
   return (
-    <header className="header flex w-full items-center justify-center border-b-2 p-4">
-      <div className="content flex w-full max-w-5xl items-center justify-between gap-3">
-        <Link className="mr-auto" to="/">
-          <h1 className="text-3xl font-medium text-(--primary)">Jan Cernik</h1>
+    <header className="header sticky top-0 z-40 flex w-full items-center justify-center border-b-2 bg-(--background) px-6 py-4">
+      <div className="content flex w-full max-w-4xl items-center justify-between gap-8">
+        <Link className="text-lg font-semibold hover:text-(--primary)" to="/">
+          Jan Cernik
         </Link>
-        <ButtonLink href={linkedinUrl}>LinkedIn</ButtonLink>
-        <ButtonLink href={cvUrl}>CV</ButtonLink>
-        <ButtonLink href={githubUrl} target="_blank">
-          GitHub
-        </ButtonLink>
+        <nav className="flex items-center gap-8">
+          {SHOW_RESUME && (
+            <a
+              className="text-base font-medium hover:text-(--primary)"
+              href="https://resume.jancernik.com"
+            >
+              Resume
+            </a>
+          )}
+          {SHOW_LINKEDIN && (
+            <a
+              className="text-base font-medium hover:text-(--primary)"
+              href="https://www.linkedin.com/in/jan-cernik"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              LinkedIn
+            </a>
+          )}
+          <a
+            className="text-base font-medium hover:text-(--primary)"
+            href="https://github.com/jancernik"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            GitHub
+          </a>
+        </nav>
       </div>
     </header>
   )
