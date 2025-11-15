@@ -6,8 +6,8 @@ import ThemeOption from "./ThemeOption"
 type ThemeCategory = "dark" | "light" | "system"
 
 const DARK_THEMES = [
-  "kiwi",
   "classic",
+  "kiwi",
   "ocean",
   "candy",
   "forest",
@@ -18,19 +18,19 @@ const DARK_THEMES = [
 ] as const
 
 const LIGHT_THEMES = [
+  "sunset",
   "lime",
   "arctic",
   "sepia",
   "mint",
   "sakura",
-  "sunset",
   "dawn",
   "lavender",
   "white"
 ] as const
 
-const DEFAULT_DARK_THEME = "kiwi"
-const DEFAULT_LIGHT_THEME = "lime"
+const DEFAULT_DARK_THEME = "classic"
+const DEFAULT_LIGHT_THEME = "sunset"
 
 function getInitialTheme(): string {
   const mode = getSavedMode()
@@ -229,18 +229,18 @@ function ThemeSwitcher() {
         e.preventDefault()
         setPreviewTheme(themes[themes.length - 1])
         break
-      case "ArrowLeft":
-        e.preventDefault()
-        if (mode === "dark") handleModeSwitch("system")
-        else if (mode === "light") handleModeSwitch("dark")
-        else if (mode === "system") handleModeSwitch("light")
-        break
-      case "ArrowRight":
-        e.preventDefault()
-        if (mode === "dark") handleModeSwitch("light")
-        else if (mode === "light") handleModeSwitch("system")
-        else if (mode === "system") handleModeSwitch("dark")
-        break
+      // case "ArrowLeft":
+      //   e.preventDefault()
+      //   if (mode === "dark") handleModeSwitch("system")
+      //   else if (mode === "light") handleModeSwitch("dark")
+      //   else if (mode === "system") handleModeSwitch("light")
+      //   break
+      // case "ArrowRight":
+      //   e.preventDefault()
+      //   if (mode === "dark") handleModeSwitch("light")
+      //   else if (mode === "light") handleModeSwitch("system")
+      //   else if (mode === "system") handleModeSwitch("dark")
+      //   break
       case "Enter":
       case " ":
         e.preventDefault()
@@ -262,13 +262,13 @@ function ThemeSwitcher() {
       </Button>
       {isOpen && (
         <div
-          className="dropdown absolute bottom-full mb-6 w-full bg-(--background)"
+          className="dropdown absolute bottom-full mb-2 w-full bg-(--background)"
           onKeyDown={handleDropdownKeyDown}
           ref={dropdownRef}
           role="dialog"
           tabIndex={-1}
         >
-          <div className="tabs mb-6 flex flex-col border-2 border-(--foreground)" role="tablist">
+          <div className="tabs mb-6 flex-col border-2 border-(--foreground) hidden" role="tablist">
             <button
               aria-pressed={mode === "dark"}
               className={`flex-1 cursor-pointer px-4.5 py-2 text-sm font-medium uppercase ${
