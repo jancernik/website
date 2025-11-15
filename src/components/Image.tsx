@@ -9,7 +9,7 @@ const baseContainerClasses =
   "flex items-center justify-center border-2 border-(--foreground) bg-(--secondary)"
 const baseImageClasses = "w-full h-full object-cover"
 
-interface Props extends ImgHTMLAttributes<HTMLImageElement> {
+export interface Props extends ImgHTMLAttributes<HTMLImageElement> {
   caption?: string
   enableDetail?: boolean
 }
@@ -41,7 +41,7 @@ function Image({ caption, className, enableDetail = false, ...props }: Props) {
       {imageDetailVisible &&
         createPortal(
           <div
-            className="fixed inset-0 top-0 right-0 z-100 flex w-screen cursor-pointer items-center justify-center p-4 backdrop-brightness-35"
+            className="fixed inset-0 top-0 right-0 z-100 flex w-screen cursor-pointer items-center justify-center p-4 backdrop-brightness-45"
             onClick={handleOverlayClick}
           >
             <div className={cn([baseContainerClasses, "max-w-6xl cursor-auto flex-col"])}>

@@ -268,7 +268,7 @@ function ThemeSwitcher() {
           role="dialog"
           tabIndex={-1}
         >
-          <div className="tabs mb-6 flex-col border-2 border-(--foreground) hidden" role="tablist">
+          <div className="tabs mb-6 hidden flex-col border-2 border-(--foreground)" role="tablist">
             <button
               aria-pressed={mode === "dark"}
               className={`flex-1 cursor-pointer px-4.5 py-2 text-sm font-medium uppercase ${
