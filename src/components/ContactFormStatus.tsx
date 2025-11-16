@@ -4,7 +4,7 @@ export type FormStatus = "error" | "idle" | "loading" | "success"
 type Props = { status: FormStatus }
 
 const baseContainerClasses =
-  "my-10 flex h-full flex-col items-center justify-center space-y-2 border-2 p-6 text-center"
+  "my-8 flex h-full flex-col items-center justify-center space-y-2 rounded border-2 p-6 text-center"
 
 export default function ContactFormStatus({ status }: Props) {
   switch (status) {

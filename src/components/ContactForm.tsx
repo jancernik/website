@@ -39,7 +39,7 @@ function ContactForm() {
   const showFields = formStatus === "idle" || formStatus === "loading"
 
   return (
-    <form className="contact-form flex h-80 w-full max-w-lg flex-col gap-4" onSubmit={handleSubmit}>
+    <form className="contact-form flex w-full max-w-lg flex-col gap-4" onSubmit={handleSubmit}>
       {showFields && (
         <>
           <StringInput
