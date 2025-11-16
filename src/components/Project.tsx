@@ -20,7 +20,10 @@ function Project({ children, images, links, name, tags }: Props) {
         <p className="leading-relaxed">{children}</p>
         <div className="flex flex-wrap gap-3">
           {tags?.map((tag) => (
-            <span className="border-2 border-(--foreground) px-3 py-1 text-sm font-medium" key={tag}>
+            <span
+              className="border-2 border-(--foreground) px-3 py-1 text-sm font-medium"
+              key={tag}
+            >
               {tag}
             </span>
           ))}
