@@ -22,7 +22,7 @@ function TextArea({
   return (
     <textarea
       autoComplete={autoComplete}
-      className="w-full resize-none border-2 border-(--foreground) bg-(--background) px-3 py-2 text-base leading-normal focus:border-(--primary) disabled:opacity-60"
+      className="w-full resize-none rounded-xs border-2 border-(--foreground) bg-(--background) px-3 py-2 text-base leading-normal focus:border-(--primary) disabled:opacity-60"
       disabled={disabled}
       name={name}
       onChange={(e) => onChange(e.target.value)}

@@ -6,7 +6,7 @@ import { cn } from "../utils/helpers"
 import { Button } from "./Button"
 
 const baseContainerClasses =
-  "flex items-center justify-center border-2 border-(--foreground) bg-(--secondary)"
+  "flex items-center justify-center border-2 border-(--foreground) bg-(--secondary) rounded-xs"
 const baseImageClasses = "w-full h-full object-cover"
 
 export interface Props extends ImgHTMLAttributes<HTMLImageElement> {

@@ -310,7 +310,7 @@ function ThemeSwitcher() {
             </button>
           </div>
           <div
-            className="theme-list max-h-120 overflow-y-auto border-2 border-(--foreground)"
+            className="theme-list max-h-120 overflow-y-auto rounded-xs border-2 border-(--foreground)"
             id="theme-list"
           >
             {themesToDisplay.map((theme) => (

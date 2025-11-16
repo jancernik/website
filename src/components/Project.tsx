@@ -14,14 +14,14 @@ interface Props {
 
 function Project({ children, images, links, name, tags }: Props) {
   return (
-    <div className="space-y-6 border-2 border-(--foreground) p-6">
+    <div className="space-y-6 rounded-xs border-2 border-(--foreground) p-6">
       <div className="space-y-4">
         <h4 className="text-xl font-bold text-(--primary)">{name}</h4>
         <p className="leading-relaxed">{children}</p>
         <div className="flex flex-wrap gap-3">
           {tags?.map((tag) => (
             <span
-              className="border-2 border-(--foreground) px-3 py-1 text-sm font-medium"
+              className="rounded-xs border-2 border-(--foreground) px-3 py-1 text-sm font-medium"
               key={tag}
             >
               {tag}

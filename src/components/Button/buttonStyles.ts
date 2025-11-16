@@ -1,7 +1,7 @@
 import { cn } from "../../utils/helpers"
 
 export const buttonBaseClasses =
-  "uppercase px-4.5 py-2 border-2 font-medium text-sm inline-block cursor-pointer disabled:opacity-60 disabled:cursor-progress"
+  "uppercase px-4.5 py-2 border-2 font-medium text-sm inline-block cursor-pointer disabled:opacity-60 disabled:cursor-progress rounded-xs"
 
 export const buttonVariantClasses = {
   primary:

@@ -22,7 +22,7 @@ function StringInput({
   return (
     <input
       autoComplete={autoComplete}
-      className="w-full border-2 border-(--foreground) bg-(--background) px-3 py-2 text-base focus:border-(--primary) disabled:opacity-60"
+      className="w-full rounded-xs border-2 border-(--foreground) bg-(--background) px-3 py-2 text-base focus:border-(--primary) disabled:opacity-60"
       disabled={disabled}
       name={name}
       onChange={(e) => onChange(e.target.value)}
