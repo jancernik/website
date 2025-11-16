@@ -1,0 +1,238 @@
+:root,
+[data-theme="black"] {
+  color-scheme: dark;
+  --background: hsl(0, 0%, 4%);
+  --foreground: hsl(0, 0%, 98%);
+  --primary: hsl(0, 0%, 93%);
+  --primary-hover: hsl(0, 0%, 89%);
+  --primary-active: hsl(0, 0%, 85%);
+  --primary-foreground: var(--background);
+  --secondary: hsl(0, 0%, 8%);
+  --secondary-hover: hsl(0, 0%, 12%);
+  --secondary-active: hsl(0, 0%, 16%);
+}
+
+[data-theme="white"] {
+  color-scheme: light;
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(0, 0%, 4%);
+  --primary: hsl(0, 0%, 4%);
+  --primary-hover: hsl(0, 0%, 8%);
+  --primary-active: hsl(0, 0%, 12%);
+  --primary-foreground: var(--background);
+  --secondary: hsl(0, 0%, 96%);
+  --secondary-hover: hsl(0, 0%, 92%);
+  --secondary-active: hsl(0, 0%, 88%);
+}
+
+/* Dark Themes */
+
+[data-theme="kiwi"] {
+  color-scheme: dark;
+  --background: hsl(69, 10%, 14%);
+  --foreground: hsl(60, 30%, 96%);
+  --primary: hsl(75, 76%, 55%);
+  --primary-hover: hsl(75, 76%, 51%);
+  --primary-active: hsl(75, 76%, 47%);
+  --primary-foreground: var(--background);
+  --secondary: hsl(60, 8%, 17%);
+  --secondary-hover: hsl(60, 8%, 24%);
+  --secondary-active: hsl(60, 8%, 28%);
+}
+
+[data-theme="classic"] {
+  color-scheme: dark;
+  --background: hsl(210, 23%, 11%);
+  --foreground: hsl(0, 0%, 93%);
+  --primary: hsl(162, 54%, 56%);
+  --primary-hover: hsl(162, 54%, 52%);
+  --primary-active: hsl(162, 54%, 48%);
+  --primary-foreground: var(--background);
+  --secondary: hsl(210, 23%, 16%);
+  --secondary-hover: hsl(210, 23%, 20%);
+  --secondary-active: hsl(210, 23%, 24%);
+}
+
+[data-theme="ocean"] {
+  color-scheme: dark;
+  --background: hsl(230, 38%, 16%);
+  --foreground: hsl(192, 22%, 93%);
+  --primary: hsl(217, 91%, 60%);
+  --primary-hover: hsl(217, 91%, 56%);
+  --primary-active: hsl(217, 91%, 52%);
+  --primary-foreground: var(--background);
+  --secondary: hsl(230, 38%, 20%);
+  --secondary-hover: hsl(230, 38%, 24%);
+  --secondary-active: hsl(230, 38%, 28%);
+}
+
+[data-theme="candy"] {
+  color-scheme: dark;
+  --background: hsl(232, 15%, 19%);
+  --foreground: hsl(60, 30%, 96%);
+  --primary: hsl(289, 100%, 73%);
+  --primary-hover: hsl(289, 100%, 69%);
+  --primary-active: hsl(289, 100%, 65%);
+  --primary-foreground: var(--background);
+  --secondary: hsl(232, 15%, 24%);
+  --secondary-hover: hsl(232, 15%, 28%);
+  --secondary-active: hsl(232, 15%, 32%);
+}
+
+[data-theme="forest"] {
+  color-scheme: dark;
+  --background: hsl(130, 18%, 12%);
+  --foreground: hsl(120, 20%, 94%);
+  --primary: hsl(140, 40%, 48%);
+  --primary-hover: hsl(140, 40%, 44%);
+  --primary-active: hsl(140, 40%, 40%);
+  --primary-foreground: var(--background);
+  --secondary: hsl(130, 18%, 16%);
+  --secondary-hover: hsl(130, 18%, 20%);
+  --secondary-active: hsl(130, 18%, 24%);
+}
+
+[data-theme="night"] {
+  color-scheme: dark;
+  --background: hsl(240, 30%, 19%);
+  --foreground: hsl(0, 0%, 98%);
+  --primary: hsl(43, 90%, 47%);
+  --primary-hover: hsl(43, 90%, 45%);
+  --primary-active: hsl(43, 90%, 41%);
+  --primary-foreground: var(--background);
+  --secondary: hsl(240, 30%, 30%);
+  --secondary-hover: hsl(240, 30%, 35%);
+  --secondary-active: hsl(240, 30%, 40%);
+}
+
+[data-theme="slate"] {
+  color-scheme: dark;
+  --background: hsl(220, 15%, 12%);
+  --foreground: hsl(210, 20%, 94%);
+  --primary: hsl(210, 16%, 70%);
+  --primary-hover: hsl(210, 16%, 66%);
+  --primary-active: hsl(210, 16%, 62%);
+  --primary-foreground: var(--background);
+  --secondary: hsl(220, 15%, 16%);
+  --secondary-hover: hsl(220, 15%, 20%);
+  --secondary-active: hsl(220, 15%, 24%);
+}
+
+[data-theme="copper"] {
+  color-scheme: dark;
+  --background: hsl(18, 22%, 12%);
+  --foreground: hsl(24, 30%, 96%);
+  --primary: hsl(20, 80%, 52%);
+  --primary-hover: hsl(20, 80%, 48%);
+  --primary-active: hsl(20, 80%, 44%);
+  --primary-foreground: var(--background);
+  --secondary: hsl(18, 22%, 16%);
+  --secondary-hover: hsl(18, 22%, 20%);
+  --secondary-active: hsl(18, 22%, 24%);
+}
+
+/* Light Themes */
+
+[data-theme="lime"] {
+  color-scheme: light;
+  --background: hsl(97, 40%, 96%);
+  --foreground: hsl(103, 15%, 19%);
+  --primary: hsl(75, 54%, 45%);
+  --primary-hover: hsl(75, 54%, 48%);
+  --primary-active: hsl(75, 54%, 51%);
+  --primary-foreground: var(--background);
+  --secondary: hsl(88, 100%, 97%);
+  --secondary-hover: hsl(88, 100%, 94%);
+  --secondary-active: hsl(88, 100%, 91%);
+}
+
+[data-theme="arctic"] {
+  color-scheme: light;
+  --background: hsl(207, 88%, 95%);
+  --foreground: hsl(226, 87%, 35%);
+  --primary: hsl(200, 100%, 41%);
+  --primary-hover: hsl(200, 100%, 45%);
+  --primary-active: hsl(200, 100%, 49%);
+  --primary-foreground: var(--background);
+  --secondary: hsl(207, 88%, 92%);
+  --secondary-hover: hsl(207, 88%, 88%);
+  --secondary-active: hsl(207, 88%, 84%);
+}
+
+[data-theme="sepia"] {
+  color-scheme: light;
+  --background: hsl(35, 40%, 95%);
+  --foreground: hsl(24, 32%, 22%);
+  --primary: hsl(20, 60%, 34%);
+  --primary-hover: hsl(20, 60%, 38%);
+  --primary-active: hsl(20, 60%, 42%);
+  --primary-foreground: var(--background);
+  --secondary: hsl(35, 40%, 91%);
+  --secondary-hover: hsl(35, 40%, 87%);
+  --secondary-active: hsl(35, 40%, 83%);
+}
+
+[data-theme="mint"] {
+  color-scheme: light;
+  --background: hsl(150, 40%, 96%);
+  --foreground: hsl(170, 25%, 18%);
+  --primary: hsl(176, 60%, 30%);
+  --primary-hover: hsl(176, 60%, 34%);
+  --primary-active: hsl(176, 60%, 38%);
+  --primary-foreground: var(--background);
+  --secondary: hsl(150, 40%, 92%);
+  --secondary-hover: hsl(150, 40%, 88%);
+  --secondary-active: hsl(150, 40%, 84%);
+}
+
+[data-theme="sakura"] {
+  color-scheme: light;
+  --background: hsl(340, 60%, 97%);
+  --foreground: hsl(330, 20%, 20%);
+  --primary: hsl(340, 80%, 60%);
+  --primary-hover: hsl(340, 80%, 64%);
+  --primary-active: hsl(340, 80%, 68%);
+  --primary-foreground: var(--background);
+  --secondary: hsl(340, 60%, 93%);
+  --secondary-hover: hsl(340, 60%, 89%);
+  --secondary-active: hsl(340, 60%, 85%);
+}
+
+[data-theme="sunset"] {
+  color-scheme: light;
+  --background: hsl(20, 80%, 96%);
+  --foreground: hsl(10, 20%, 20%);
+  --primary: hsl(14, 90%, 55%);
+  --primary-hover: hsl(14, 90%, 59%);
+  --primary-active: hsl(14, 90%, 63%);
+  --primary-foreground: var(--background);
+  --secondary: hsl(20, 80%, 92%);
+  --secondary-hover: hsl(20, 80%, 88%);
+  --secondary-active: hsl(20, 80%, 84%);
+}
+
+[data-theme="dawn"] {
+  color-scheme: light;
+  --background: hsl(35, 70%, 97%);
+  --foreground: hsl(230, 20%, 18%);
+  --primary: hsl(210, 90%, 42%);
+  --primary-hover: hsl(210, 90%, 46%);
+  --primary-active: hsl(210, 90%, 50%);
+  --primary-foreground: var(--background);
+  --secondary: hsl(35, 70%, 93%);
+  --secondary-hover: hsl(35, 70%, 89%);
+  --secondary-active: hsl(35, 70%, 85%);
+}
+
+[data-theme="lavender"] {
+  color-scheme: light;
+  --background: hsl(260, 40%, 97%);
+  --foreground: hsl(260, 25%, 20%);
+  --primary: hsl(265, 70%, 56%);
+  --primary-hover: hsl(265, 70%, 60%);
+  --primary-active: hsl(265, 70%, 64%);
+  --primary-foreground: var(--background);
+  --secondary: hsl(260, 40%, 93%);
+  --secondary-hover: hsl(260, 40%, 89%);
+  --secondary-active: hsl(260, 40%, 85%);
+}
