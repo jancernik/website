@@ -20,12 +20,12 @@ function Home() {
               {
                 alt: "Revelo Screenshot 1",
                 caption: "Infinite masonry layout in the homepage",
-                src: "/images/revelo-1.png"
+                src: "/images/revelo-1.jpg"
               },
               {
                 alt: "Revelo Screenshot 2",
                 caption: "Detail view of an image in a collection",
-                src: "/images/revelo-2.png"
+                src: "/images/revelo-2.jpg"
               }
             ]}
             links={[
