@@ -1,4 +1,5 @@
 interface Props {
+  autoComplete?: string
   disabled?: boolean
   name: string
   onChange: (value: string) => void
@@ -8,9 +9,19 @@ interface Props {
   value: string
 }
 
-function TextArea({ disabled, name, onChange, placeholder, required, rows, value }: Props) {
+function TextArea({
+  autoComplete,
+  disabled,
+  name,
+  onChange,
+  placeholder,
+  required,
+  rows,
+  value
+}: Props) {
   return (
     <textarea
+      autoComplete={autoComplete}
       className="w-full resize-none border-2 border-(--foreground) bg-(--background) px-3 py-2 text-base leading-normal focus:border-(--primary) disabled:opacity-60"
       disabled={disabled}
       name={name}

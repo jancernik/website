@@ -1,6 +1,10 @@
-export type FormStatus = "error" | "idle" | "loading" | "success"
+import { cn } from "../utils/helpers"
 
+export type FormStatus = "error" | "idle" | "loading" | "success"
 type Props = { status: FormStatus }
+
+const baseContainerClasses =
+  "my-10 flex h-full flex-col items-center justify-center space-y-2 border-2 p-6 text-center"
 
 export default function ContactFormStatus({ status }: Props) {
   switch (status) {
@@ -10,18 +14,23 @@ export default function ContactFormStatus({ status }: Props) {
       return null
     case "success":
       return (
-        <>
-          <p className="text-center">Message sent!</p>
-          <p className="text-center">I will get back to you as soon as possible</p>
-        </>
+        <div className={cn([baseContainerClasses, "border-(--primary)"])}>
+          <p className="text-xl font-medium text-(--primary)">{`Message sent!`}</p>
+          <p className="text-base">{`I'll get back to you as soon as possible.`}</p>
+        </div>
       )
     case "error":
       return (
-        <>
-          <p className="text-center">Sorry, there was an error!</p>
-          <p className="text-center">Ty emailing me instead.</p>
-          <p className="text-center">jancernik12@gmail.com</p>
-        </>
+        <div className={cn([baseContainerClasses, "border-(--foreground)"])}>
+          <p className="text-xl font-medium">{`Sorry, there was an error!`}</p>
+          <p className="text-base">{`Try emailing me directly instead:`}</p>
+          <a
+            className="text-base font-medium text-(--primary) hover:underline"
+            href="mailto:jancernik12@gmail.com"
+          >
+            jancernik12@gmail.com
+          </a>
+        </div>
       )
     default:
       return null

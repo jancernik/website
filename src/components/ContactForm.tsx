@@ -39,15 +39,11 @@ function ContactForm() {
   const showFields = formStatus === "idle" || formStatus === "loading"
 
   return (
-    <form
-      className="contact-form flex max-w-md flex-col items-center gap-6"
-      onSubmit={handleSubmit}
-    >
+    <form className="contact-form flex h-80 w-full max-w-lg flex-col gap-4" onSubmit={handleSubmit}>
       {showFields && (
         <>
-          <h4>Message me!</h4>
-
           <StringInput
+            autoComplete="name"
             disabled={formStatus === "loading"}
             name="name"
             onChange={setName}
@@ -57,6 +53,7 @@ function ContactForm() {
             value={name}
           />
           <StringInput
+            autoComplete="email"
             disabled={formStatus === "loading"}
             name="email"
             onChange={setEmail}
@@ -71,11 +68,16 @@ function ContactForm() {
             onChange={setMessage}
             placeholder="Message"
             required
-            rows={5}
+            rows={6}
             value={message}
           />
-          <Button disabled={formStatus === "loading"} type="submit">
-            {formStatus === "loading" ? "Sending…" : "Send"}
+          <Button
+            className="w-full"
+            disabled={formStatus === "loading"}
+            type="submit"
+            variant="primary"
+          >
+            {formStatus === "loading" ? "Sending…" : "Send Message"}
           </Button>
         </>
       )}
