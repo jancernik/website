@@ -46,7 +46,7 @@ function Header() {
   }
 
   return (
-    <header className="header sticky top-0 z-40 flex w-full items-center justify-center border-b-2 bg-(--background) px-3 py-4">
+    <header className="header sticky top-0 z-40 flex w-full items-center justify-center border-b-2 bg-(--background) px-4.5 py-3.5 sm:px-6 sm:py-4">
       <div className="content flex w-full max-w-4xl items-center justify-between gap-3 sm:gap-8">
         <button
           className="cursor-pointer text-lg font-semibold hover:text-(--primary)"
