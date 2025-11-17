@@ -46,15 +46,16 @@ function Header() {
   }
 
   return (
-    <header className="header sticky top-0 z-40 flex w-full items-center justify-center border-b-2 bg-(--background) px-6 py-4">
-      <div className="content flex w-full max-w-4xl items-center justify-between gap-8">
+    <header className="header sticky top-0 z-40 flex w-full items-center justify-center border-b-2 bg-(--background) px-3 py-4">
+      <div className="content flex w-full max-w-4xl items-center justify-between gap-3 sm:gap-8">
         <button
           className="cursor-pointer text-lg font-semibold hover:text-(--primary)"
           onClick={handleClick}
         >
-          Jan Cernik
+          <span className="visible max-sm:hidden">Jan Cernik</span>
+          <span className="visible sm:hidden">JC</span>
         </button>
-        <nav className="flex items-center gap-8">
+        <nav className="flex items-center gap-4 sm:gap-8">
           {SHOW_RESUME && (
             <a
               className="text-base font-medium hover:text-(--primary)"

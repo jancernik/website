@@ -5,7 +5,10 @@ import Section from "../components/Section"
 
 function Home() {
   return (
-    <main className="flex w-full flex-col items-center px-4 pt-12 pb-24" id="main-content">
+    <main
+      className="flex w-full flex-col items-center px-4 pt-8 pb-18 sm:pt-12 sm:pb-24"
+      id="main-content"
+    >
       <div className="w-full max-w-4xl space-y-16">
         <section className="space-y-12 py-4 text-center md:py-8">
           <div className="flex justify-center">

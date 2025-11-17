@@ -41,14 +41,14 @@ function Image({ caption, className, enableDetail = false, ...props }: Props) {
       {imageDetailVisible &&
         createPortal(
           <div
-            className="fixed inset-0 top-0 right-0 z-100 flex w-screen cursor-pointer items-center justify-center p-4 backdrop-brightness-45"
+            className="fixed inset-0 top-0 right-0 z-100 flex w-screen cursor-pointer items-center justify-center p-4 backdrop-brightness-25 sm:backdrop-brightness-40"
             onClick={handleOverlayClick}
           >
             <div className={cn([baseContainerClasses, "max-w-6xl cursor-auto flex-col"])}>
               <img {...props} className={baseImageClasses} />
               <div className="flex w-full flex-row items-center justify-between border-t-2">
-                <span className="px-3 italic">{caption}</span>
-                <Button className="border-y-0 border-r-0" onClick={handleButtonClick}>
+                <span className="w-full border-r-2 px-3 py-2 italic">{caption}</span>
+                <Button className="border-x-0 border-y-0" onClick={handleButtonClick}>
                   Close
                 </Button>
               </div>
