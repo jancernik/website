@@ -15,7 +15,9 @@ function Home() {
             <Image
               alt="Jan Cernik"
               className="h-50 w-50 md:h-60 md:w-60"
+              height={830}
               src="/images/profile.jpg"
+              width={830}
             />
           </div>
           <div className="space-y-6">
@@ -24,17 +26,24 @@ function Home() {
               <span className="text-(--primary)">Jan Cernik</span>
             </h1>
             <p className="mx-auto max-w-2xl text-lg leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur et repellat error,
-              non sint maxime aspernatur voluptas! Nostrum, qui. Sequi tenetur numquam in velit
-              error voluptatum ipsa nam facere molestiae.
+              Web developer, tech enthusiast and hardware tinkerer.
+              <br />I like to learn by building real things, from web interfaces and backends to
+              servers and the hardware they run on.
             </p>
           </div>
         </section>
-        <Section title="Lorem ipsum">
+        <Section title="About me">
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique maxime asperiores
-            perspiciatis ipsa, excepturi delectus, et alias optio doloribus sit sed accusantium
-            ipsam repudiandae nam veritatis enim a adipisci ullam!
+            I started with Arduino and small electronics projects as a kid, gradually moving from
+            basic circuits and microcontroller code to applications that live in the browser and on
+            servers. That path eventually led me to working on full web stacks and infrastructure,
+            until software became the main thing I work on.
+          </p>
+          <p>
+            Today I focus on web development and running my own services on Linux, Proxmox and
+            Docker, while still using electronics for personal projects, especially for home
+            automation.That includes custom switches and sensors, self-hosted services and a few
+            experiments that connect the physical side of my setup with the software I write.
           </p>
         </Section>
 
@@ -44,12 +53,16 @@ function Home() {
               {
                 alt: "Revelo Screenshot 1",
                 caption: "Infinite masonry layout in the homepage",
-                src: "/images/revelo-1.jpg"
+                height: 1080,
+                src: "/images/revelo-1.jpg",
+                width: 1920
               },
               {
                 alt: "Revelo Screenshot 2",
                 caption: "Detail view of an image in a collection",
-                src: "/images/revelo-2.jpg"
+                height: 1080,
+                src: "/images/revelo-2.jpg",
+                width: 1920
               }
             ]}
             links={[
@@ -59,9 +72,9 @@ function Home() {
             name="Revelo"
             tags={["Vue", "Express", "GSAP"]}
           >
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique maxime asperiores
-            perspiciatis ipsa, excepturi delectus, et alias optio doloribus sit sed accusantium
-            ipsam repudiandae nam veritatis enim a adipisci ullam!
+            Revelo is one of my latest public projects and my current dev playground. It’s a photo
+            web app with a custom, infinite scrolling, masonry layout on the homepage, an admin
+            dashboard and AI-powered search to quickly find images by concept.
           </Project>
         </Section>
 
