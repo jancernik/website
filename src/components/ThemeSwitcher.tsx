@@ -32,7 +32,10 @@ const LIGHT_THEMES = [
 const DEFAULT_DARK_THEME = "classic"
 const DEFAULT_LIGHT_THEME = "sunset"
 
+const isBrowser = typeof window !== "undefined"
+
 function getInitialTheme(): string {
+  if (!isBrowser) return DEFAULT_DARK_THEME
   const mode = getSavedMode()
   if (mode === "system") {
     const systemPref = getSystemPreference()
@@ -43,16 +46,19 @@ function getInitialTheme(): string {
 }
 
 function getSavedMode(): ThemeCategory {
+  if (!isBrowser) return "system"
   const saved = localStorage.getItem("theme-mode") as ThemeCategory
   return saved || "system"
 }
 
 function getSavedTheme(category: "dark" | "light"): string {
+  if (!isBrowser) return category === "dark" ? DEFAULT_DARK_THEME : DEFAULT_LIGHT_THEME
   const saved = localStorage.getItem(`theme-${category}`)
   return saved || (category === "dark" ? DEFAULT_DARK_THEME : DEFAULT_LIGHT_THEME)
 }
 
 function getSystemPreference(): "dark" | "light" {
+  if (!isBrowser) return "dark"
   return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
 }
 

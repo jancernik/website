@@ -1,9 +1,9 @@
-import { Outlet } from "react-router"
+import type { ReactNode } from "react"
 
 import Header from "./components/Header"
 import ThemeSwitcher from "./components/ThemeSwitcher"
 
-export default function RootLayout() {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <>
       <a
@@ -13,7 +13,7 @@ export default function RootLayout() {
         Skip to main content
       </a>
       <Header />
-      <Outlet />
+      {children}
       <ThemeSwitcher />
     </>
   )
