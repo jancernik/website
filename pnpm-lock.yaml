@@ -27,8 +27,8 @@ importers:
         specifier: ^4.2.1
         version: 4.2.1
       vite-prerender-plugin:
-        specifier: ^0.5.12
-        version: 0.5.12(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(lightningcss@1.31.1))
+        specifier: ^0.5.13
+        version: 0.5.13(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(lightningcss@1.31.1))
     devDependencies:
       '@eslint/js':
         specifier: ^10.0.1
@@ -1930,10 +1930,10 @@ packages:
   uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
 
-  vite-prerender-plugin@0.5.12:
-    resolution: {integrity: sha512-EiwhbMn+flg14EysbLTmZSzq8NGTxhytgK3bf4aGRF1evWLGwZiHiUJ1KZDvbxgKbMf2pG6fJWGEa3UZXOnR1g==}
+  vite-prerender-plugin@0.5.13:
+    resolution: {integrity: sha512-IKSpYkzDBsKAxa05naRbj7GvNVMSdww/Z/E89oO3xndz+gWnOBOKOAbEXv7qDhktY/j3vHgJmoV1pPzqU2tx9g==}
     peerDependencies:
-      vite: 5.x || 6.x || 7.x
+      vite: 5.x || 6.x || 7.x || 8.x
 
   vite@7.3.1:
     resolution: {integrity: sha512-w+N7Hifpc3gRjZ63vYBXA56dvvRlNWRczTdmCBBa+CotUzAPf5b7YMdMR/8CQoeYE5LX3W4wj6RYTgonm1b9DA==}
@@ -4070,7 +4070,7 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  vite-prerender-plugin@0.5.12(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(lightningcss@1.31.1)):
+  vite-prerender-plugin@0.5.13(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(lightningcss@1.31.1)):
     dependencies:
       kolorist: 1.8.0
       magic-string: 0.30.21
