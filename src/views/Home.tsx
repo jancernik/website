@@ -47,7 +47,7 @@ function Home() {
           </p>
         </Section>
 
-        <Section title="Featured Project">
+        <Section title="Featured Projects">
           <Project
             images={[
               {
@@ -72,9 +72,37 @@ function Home() {
             name="Revelo"
             tags={["Vue", "Express", "GSAP"]}
           >
-            Revelo is one of my latest public projects and my current dev playground. It’s a photo
-            web app with a custom, infinite scrolling, masonry layout on the homepage, an admin
-            dashboard and AI-powered search to quickly find images by concept.
+            A photography gallery I built to give the pictures I take a better home than the usual
+            platforms. It has a custom infinite scrolling masonry layout, an admin dashboard, and
+            AI-powered search to quickly find images by concept.
+          </Project>
+          <Project
+            images={[
+              {
+                alt: "Makros Screenshot 1",
+                caption: "Main view with the daily plan and foods library side by side",
+                height: 1080,
+                src: "/images/makros-1.jpg",
+                width: 1920
+              },
+              {
+                alt: "Makros Screenshot 2",
+                caption: "Food edit form",
+                height: 1080,
+                src: "/images/makros-2.jpg",
+                width: 1920
+              }
+            ]}
+            links={[
+              { href: "https://demo.makros.cuasar.cc", text: "View Demo" },
+              { href: "https://github.com/jancernik/makros", text: "View Code" }
+            ]}
+            name="Makros"
+            tags={["Next.js", "TanStack Table", "Tailwind CSS"]}
+          >
+            A self-hosted macro and nutrition tracker I built after my spreadsheet setup got too
+            complex. Optimistic UI keeps every interaction instant, with changes syncing to the
+            database in the background.
           </Project>
         </Section>
 

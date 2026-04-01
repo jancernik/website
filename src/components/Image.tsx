@@ -14,7 +14,7 @@ export interface Props extends ImgHTMLAttributes<HTMLImageElement> {
   enableDetail?: boolean
 }
 
-function Image({ caption, className, enableDetail = false, ...props }: Props) {
+function Image({ caption, className, enableDetail = false, height, width, ...props }: Props) {
   const [imageDetailVisible, setImageDetailVisibility] = useState(false)
 
   useScrollLock(imageDetailVisible)
@@ -36,7 +36,13 @@ function Image({ caption, className, enableDetail = false, ...props }: Props) {
   return (
     <>
       <div className={cn([baseContainerClasses, enableDetail && "cursor-pointer", className])}>
-        <img {...props} className={baseImageClasses} onClick={handleImageClick} />
+        <img
+          {...props}
+          height={height}
+          width={width}
+          className={baseImageClasses}
+          onClick={handleImageClick}
+        />
       </div>
       {imageDetailVisible &&
         createPortal(
@@ -44,8 +50,11 @@ function Image({ caption, className, enableDetail = false, ...props }: Props) {
             className="fixed inset-0 top-0 right-0 z-100 flex w-screen cursor-pointer items-center justify-center p-4 backdrop-brightness-25 sm:backdrop-brightness-40"
             onClick={handleOverlayClick}
           >
-            <div className={cn([baseContainerClasses, "max-w-6xl cursor-auto flex-col"])}>
-              <img {...props} className={baseImageClasses} />
+            <div
+              className={cn([baseContainerClasses, "w-full max-w-6xl cursor-auto flex-col"])}
+              style={width && height ? { aspectRatio: `${width} / ${height}` } : undefined}
+            >
+              <img {...props} height={height} width={width} className={baseImageClasses} />
               <div className="flex w-full flex-row items-center justify-between border-t-2">
                 <span className="w-full border-r-2 px-3 py-2 italic">{caption}</span>
                 <Button className="border-x-0 border-y-0" onClick={handleButtonClick}>
