@@ -42,7 +42,7 @@ function Home() {
           <p>
             Today I focus on web development and running my own services on Linux, Proxmox and
             Docker, while still using electronics for personal projects, especially for home
-            automation.That includes custom switches and sensors, self-hosted services and a few
+            automation. That includes custom switches and sensors, self-hosted services and a few
             experiments that connect the physical side of my setup with the software I write.
           </p>
         </Section>
