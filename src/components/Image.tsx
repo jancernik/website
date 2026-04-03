@@ -1,21 +1,47 @@
-import { type ImgHTMLAttributes, type MouseEvent, useState } from "react"
+import { type ImgHTMLAttributes, type MouseEvent, useLayoutEffect, useRef, useState } from "react"
 import { createPortal } from "react-dom"
+import { LQIP } from "virtual:lqip"
 
 import { useScrollLock } from "../hooks/useScrollLock"
 import { cn } from "../utils/helpers"
 import { Button } from "./Button"
 
 const baseContainerClasses =
-  "flex items-center justify-center border-2 border-(--foreground) bg-(--secondary) rounded-xs"
-const baseImageClasses = "w-full h-full object-cover"
+  "relative overflow-hidden flex items-center justify-center border-2 border-(--foreground) bg-(--secondary) rounded-xs"
 
 export interface Props extends ImgHTMLAttributes<HTMLImageElement> {
   caption?: string
   enableDetail?: boolean
 }
 
-function Image({ caption, className, enableDetail = false, height, width, ...props }: Props) {
+function useLoaded() {
+  const [loaded, setLoaded] = useState(false)
+  const ref = useRef<HTMLImageElement>(null)
+
+  useLayoutEffect(() => {
+    if (ref.current?.complete) setLoaded(true)
+  }, [])
+
+  return { loaded, ref, onLoad: () => setLoaded(true) }
+}
+
+function Placeholder({ lqip }: { lqip: string }) {
+  return (
+    <div
+      className="absolute inset-0 scale-110"
+      style={{
+        backgroundImage: `url(${lqip})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        filter: "blur(6px)"
+      }}
+    />
+  )
+}
+
+function Image({ caption, className, enableDetail = false, height, src, width, ...props }: Props) {
   const [imageDetailVisible, setImageDetailVisibility] = useState(false)
+  const { loaded, ref, onLoad } = useLoaded()
 
   useScrollLock(imageDetailVisible)
 
@@ -33,15 +59,25 @@ function Image({ caption, className, enableDetail = false, height, width, ...pro
     setImageDetailVisibility(false)
   }
 
+  const filename = src?.toString().split("/").pop() ?? ""
+  const lqip = LQIP[filename]
+
   return (
     <>
       <div className={cn([baseContainerClasses, enableDetail && "cursor-pointer", className])}>
+        {lqip && <Placeholder lqip={lqip} />}
         <img
           {...props}
+          ref={ref}
           height={height}
+          src={src}
           width={width}
-          className={baseImageClasses}
+          className={cn([
+            "relative h-full w-full object-cover transition-opacity duration-200",
+            !loaded && "opacity-0"
+          ])}
           onClick={handleImageClick}
+          onLoad={onLoad}
         />
       </div>
       {imageDetailVisible &&
@@ -54,8 +90,11 @@ function Image({ caption, className, enableDetail = false, height, width, ...pro
               className={cn([baseContainerClasses, "w-full max-w-6xl cursor-auto flex-col"])}
               style={width && height ? { aspectRatio: `${width} / ${height}` } : undefined}
             >
-              <img {...props} height={height} width={width} className={baseImageClasses} />
-              <div className="flex w-full flex-row items-center justify-between border-t-2">
+              <div className="relative min-h-0 flex-1">
+                {lqip && <Placeholder lqip={lqip} />}
+                <DetailImage {...props} height={height} src={src} width={width} />
+              </div>
+              <div className="relative flex w-full flex-row items-center justify-between border-t-2">
                 <span className="w-full border-r-2 px-3 py-2 italic">{caption}</span>
                 <Button className="border-x-0 border-y-0" onClick={handleButtonClick}>
                   Close
@@ -66,6 +105,21 @@ function Image({ caption, className, enableDetail = false, height, width, ...pro
           document.body
         )}
     </>
+  )
+}
+
+function DetailImage(props: ImgHTMLAttributes<HTMLImageElement>) {
+  const { loaded, ref, onLoad } = useLoaded()
+  return (
+    <img
+      {...props}
+      ref={ref}
+      className={cn([
+        "relative h-full w-full object-cover transition-opacity duration-200",
+        !loaded && "opacity-0"
+      ])}
+      onLoad={onLoad}
+    />
   )
 }
 
