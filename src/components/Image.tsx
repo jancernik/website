@@ -7,11 +7,25 @@ import { cn } from "../utils/helpers"
 import { Button } from "./Button"
 
 const baseContainerClasses =
-  "flex items-center justify-center border-2 border-(--foreground) bg-(--secondary) rounded-xs"
+  "relative overflow-hidden flex items-center justify-center border-2 border-(--foreground) bg-(--secondary) rounded-xs"
 
 export interface Props extends ImgHTMLAttributes<HTMLImageElement> {
   caption?: string
   enableDetail?: boolean
+}
+
+function Placeholder({ lqip }: { lqip: string }) {
+  return (
+    <div
+      className="absolute inset-0 scale-110"
+      style={{
+        backgroundImage: `url(${lqip})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        filter: "blur(5px)"
+      }}
+    />
+  )
 }
 
 function Image({ caption, className, enableDetail = false, height, src, width, ...props }: Props) {
@@ -36,23 +50,18 @@ function Image({ caption, className, enableDetail = false, height, src, width, .
 
   const filename = src?.toString().split("/").pop() ?? ""
   const lqip = LQIP[filename]
-  const placeholderStyle = lqip
-    ? { backgroundImage: `url(${lqip})`, backgroundSize: "cover", backgroundPosition: "center" }
-    : undefined
 
   return (
     <>
-      <div
-        className={cn([baseContainerClasses, enableDetail && "cursor-pointer", className])}
-        style={placeholderStyle}
-      >
+      <div className={cn([baseContainerClasses, enableDetail && "cursor-pointer", className])}>
+        {lqip && <Placeholder lqip={lqip} />}
         <img
           {...props}
           height={height}
           src={src}
           width={width}
           className={cn([
-            "h-full w-full object-cover transition-opacity duration-500",
+            "relative h-full w-full object-cover transition-opacity duration-300",
             !loaded && "opacity-0"
           ])}
           onClick={handleImageClick}
@@ -67,15 +76,13 @@ function Image({ caption, className, enableDetail = false, height, src, width, .
           >
             <div
               className={cn([baseContainerClasses, "w-full max-w-6xl cursor-auto flex-col"])}
-              style={{
-                ...(width && height ? { aspectRatio: `${width} / ${height}` } : undefined),
-                ...placeholderStyle
-              }}
+              style={width && height ? { aspectRatio: `${width} / ${height}` } : undefined}
             >
-              <div className="min-h-0 flex-1">
+              {lqip && <Placeholder lqip={lqip} />}
+              <div className="relative min-h-0 flex-1">
                 <DetailImage {...props} height={height} src={src} width={width} />
               </div>
-              <div className="flex w-full flex-row items-center justify-between border-t-2">
+              <div className="relative flex w-full flex-row items-center justify-between border-t-2">
                 <span className="w-full border-r-2 px-3 py-2 italic">{caption}</span>
                 <Button className="border-x-0 border-y-0" onClick={handleButtonClick}>
                   Close
@@ -95,7 +102,7 @@ function DetailImage(props: ImgHTMLAttributes<HTMLImageElement>) {
     <img
       {...props}
       className={cn([
-        "h-full w-full object-cover transition-opacity duration-500",
+        "h-full w-full object-cover transition-opacity duration-300",
         !loaded && "opacity-0"
       ])}
       onLoad={() => setLoaded(true)}
