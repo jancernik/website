@@ -1,10 +1,10 @@
 import { readdir } from "fs/promises"
 import { join } from "path"
 import sharp from "sharp"
-import type { Plugin, ResolvedConfig } from "vite"
+import type { Plugin } from "vite"
 
 const VIRTUAL_ID = "virtual:lqip"
-const RESOLVED_ID = "\0virtual:lqip"
+const RESOLVED_ID = '\0' + VIRTUAL_ID
 
 export function lqipPlugin(): Plugin {
   let lqipData: Record<string, string> = {}
@@ -33,13 +33,13 @@ export function lqipPlugin(): Plugin {
 
   return {
     name: "vite-plugin-lqip",
-    async configResolved(config: ResolvedConfig) {
+    async configResolved(config) {
       await generate(config.publicDir)
     },
-    resolveId(id: string) {
+    resolveId(id) {
       if (id === VIRTUAL_ID) return RESOLVED_ID
     },
-    load(id: string) {
+    load(id) {
       if (id === RESOLVED_ID) {
         return `export const LQIP = ${JSON.stringify(lqipData)}`
       }

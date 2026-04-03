@@ -14,6 +14,11 @@ export interface Props extends ImgHTMLAttributes<HTMLImageElement> {
   enableDetail?: boolean
 }
 
+function useLoaded() {
+  const [loaded, setLoaded] = useState(false)
+  return { loaded, onLoad: () => setLoaded(true) }
+}
+
 function Placeholder({ lqip }: { lqip: string }) {
   return (
     <div
@@ -30,7 +35,7 @@ function Placeholder({ lqip }: { lqip: string }) {
 
 function Image({ caption, className, enableDetail = false, height, src, width, ...props }: Props) {
   const [imageDetailVisible, setImageDetailVisibility] = useState(false)
-  const [loaded, setLoaded] = useState(false)
+  const { loaded, onLoad } = useLoaded()
 
   useScrollLock(imageDetailVisible)
 
@@ -65,7 +70,7 @@ function Image({ caption, className, enableDetail = false, height, src, width, .
             !loaded && "opacity-0"
           ])}
           onClick={handleImageClick}
-          onLoad={() => setLoaded(true)}
+          onLoad={onLoad}
         />
       </div>
       {imageDetailVisible &&
@@ -78,8 +83,8 @@ function Image({ caption, className, enableDetail = false, height, src, width, .
               className={cn([baseContainerClasses, "w-full max-w-6xl cursor-auto flex-col"])}
               style={width && height ? { aspectRatio: `${width} / ${height}` } : undefined}
             >
-              {lqip && <Placeholder lqip={lqip} />}
               <div className="relative min-h-0 flex-1">
+                {lqip && <Placeholder lqip={lqip} />}
                 <DetailImage {...props} height={height} src={src} width={width} />
               </div>
               <div className="relative flex w-full flex-row items-center justify-between border-t-2">
@@ -97,15 +102,15 @@ function Image({ caption, className, enableDetail = false, height, src, width, .
 }
 
 function DetailImage(props: ImgHTMLAttributes<HTMLImageElement>) {
-  const [loaded, setLoaded] = useState(false)
+  const { loaded, onLoad } = useLoaded()
   return (
     <img
       {...props}
       className={cn([
-        "h-full w-full object-cover transition-opacity duration-200",
+        "relative h-full w-full object-cover transition-opacity duration-200",
         !loaded && "opacity-0"
       ])}
-      onLoad={() => setLoaded(true)}
+      onLoad={onLoad}
     />
   )
 }
