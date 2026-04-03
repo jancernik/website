@@ -22,7 +22,7 @@ function Placeholder({ lqip }: { lqip: string }) {
         backgroundImage: `url(${lqip})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        filter: "blur(5px)"
+        filter: "blur(6px)"
       }}
     />
   )
@@ -61,7 +61,7 @@ function Image({ caption, className, enableDetail = false, height, src, width, .
           src={src}
           width={width}
           className={cn([
-            "relative h-full w-full object-cover transition-opacity duration-300",
+            "relative h-full w-full object-cover transition-opacity duration-200",
             !loaded && "opacity-0"
           ])}
           onClick={handleImageClick}
@@ -102,7 +102,7 @@ function DetailImage(props: ImgHTMLAttributes<HTMLImageElement>) {
     <img
       {...props}
       className={cn([
-        "h-full w-full object-cover transition-opacity duration-300",
+        "h-full w-full object-cover transition-opacity duration-200",
         !loaded && "opacity-0"
       ])}
       onLoad={() => setLoaded(true)}
