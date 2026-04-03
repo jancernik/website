@@ -86,11 +86,11 @@ function Image({ caption, className, enableDetail = false, height, src, width, .
             className="fixed inset-0 top-0 right-0 z-100 flex w-screen cursor-pointer items-center justify-center p-4 backdrop-brightness-25 sm:backdrop-brightness-40"
             onClick={handleOverlayClick}
           >
-            <div
-              className={cn([baseContainerClasses, "w-full max-w-6xl cursor-auto flex-col"])}
-              style={width && height ? { aspectRatio: `${width} / ${height}` } : undefined}
-            >
-              <div className="relative min-h-0 flex-1">
+            <div className={cn([baseContainerClasses, "w-full max-w-6xl cursor-auto flex-col"])}>
+              <div
+                className="relative w-full overflow-hidden"
+                style={width && height ? { aspectRatio: `${width} / ${height}` } : undefined}
+              >
                 {lqip && <Placeholder lqip={lqip} />}
                 <DetailImage {...props} height={height} src={src} width={width} />
               </div>

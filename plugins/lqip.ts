@@ -4,7 +4,7 @@ import sharp from "sharp"
 import type { Plugin } from "vite"
 
 const VIRTUAL_ID = "virtual:lqip"
-const RESOLVED_ID = '\0' + VIRTUAL_ID
+const RESOLVED_ID = "\0" + VIRTUAL_ID
 
 export function lqipPlugin(): Plugin {
   let lqipData: Record<string, string> = {}
