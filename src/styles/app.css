@@ -101,3 +101,12 @@ select:focus-visible,
     transparent 100%
   );
 }
+
+@keyframes img-reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
