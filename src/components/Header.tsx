@@ -5,14 +5,14 @@ const SHOW_RESUME = true
 const SHOW_LINKEDIN = true
 
 const cssVar = (name: string) => {
-  return getComputedStyle(document.documentElement).getPropertyValue(name)
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim()
 }
 
 function Header() {
   const location = useLocation()
   const navigate = useNavigate()
 
-  const handleClick = async (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault()
 
     if (location.pathname !== "/") {
@@ -20,26 +20,26 @@ function Header() {
     } else {
       const confettiConfig = {
         colors: [cssVar("--primary"), cssVar("--foreground")],
-        particleCount: 150,
+        count: 150,
         spread: 120,
         startVelocity: 60
       }
 
-      await confetti({
+      void confetti({
         ...confettiConfig,
         angle: 40,
-        origin: {
-          x: -0.1,
-          y: 0.5
+        position: {
+          x: 0,
+          y: 50
         }
       })
 
-      await confetti({
+      void confetti({
         ...confettiConfig,
         angle: 140,
-        origin: {
-          x: 1.1,
-          y: 0.5
+        position: {
+          x: 100,
+          y: 50
         }
       })
     }
