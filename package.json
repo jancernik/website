@@ -15,11 +15,11 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
-    "@tsparticles/confetti": "^4.3.2",
+    "@tsparticles/confetti": "^4.4.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "react-router": "^8.3.0",
-    "sharp": "^0.35.3",
+    "react-router": "^8.3.1",
+    "sharp": "^0.35.4",
     "tailwindcss": "^4.3.3",
     "vite-prerender-plugin": "^0.5.13"
   },
